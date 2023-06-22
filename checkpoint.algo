@@ -1,0 +1,19 @@
+function IsPalindrome(word: string): boolean;
+var 
+word: string;
+
+begin
+   //condition1: mot vide ou un seul caractère is a palindrome
+  if (Length(word) <= 1) then
+    return(true);
+
+// comparaison du caractère avec le dernier mot
+  if (word[1] = word[Length(word)]) then
+    // Tester récursivement le reste du mot
+    return(IsPalindrome(word, 2, Length(word) - 2));
+
+  // Difference existe, stop
+  return(false);
+  end if;
+end;
+
